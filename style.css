@@ -51,7 +51,7 @@ body{background-image:radial-gradient(1200px 500px at 50% -10%,color-mix(in srgb
 .stats li{display:flex;flex-direction:column}.stats b{font-size:26px}.stats span{color:var(--muted);font-size:13px}
 .phone{margin:0;border-radius:34px;padding:7px;background:linear-gradient(160deg,#2b3142,#0d1017);box-shadow:0 30px 60px -20px rgba(0,0,0,.55),0 0 0 1px var(--line)}
 :root[data-theme=light] .phone{box-shadow:0 30px 60px -24px rgba(30,40,80,.35),0 0 0 1px var(--line)}
-.phone img{border-radius:28px;width:100%;height:auto;display:block}
+.phone img{border-radius:28px;width:100%;height:auto;aspect-ratio:780/1692;object-fit:cover;display:block;background:#0d1017}
 .hero-phones{position:relative;height:520px}
 .hero-phones .phone{position:absolute;width:210px}
 .hero-phones .p1{left:2%;top:50px;transform:rotate(-8deg)}
