@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#0b0d12">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <script>try{var t=localStorage.getItem("ng-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t}catch(e){}</script>
-<link rel="stylesheet" href="style.css?v=1">
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 <header class="nav"><div class="wrap nav-in">
@@ -20,19 +20,47 @@
 <button id="theme" aria-label="Changer de thème" type="button">◐</button></nav>
 </div></header>
 <main>
-<section class="hero"><div class="wrap">
-<p class="eyebrow">Éditeur d’applications</p>
+<section class="hero"><div class="glow"></div><div class="wrap hero-grid">
+<div class="hero-copy">
+<p class="eyebrow">Éditeur d’applications · Paris</p>
 <h1>Des apps utiles,<br><span class="grad">soignées et simples.</span></h1>
 <p class="lead">Nour Groupe conçoit et publie des applications mobiles et web pensées pour le quotidien : réserver, prier, gérer son budget.</p>
-<p><a class="btn" href="#apps">Découvrir les apps</a> <a class="btn ghost" href="/contact.html">Nous contacter</a></p>
+<p class="cta"><a class="btn" href="#apps">Découvrir les apps</a> <a class="btn ghost" href="/contact.html">Nous contacter</a></p>
+<ul class="stats"><li><b>3</b><span>applications</span></li><li><b>iOS</b><span>& Android</span></li><li><b>FR</b><span>conçu à Paris</span></li></ul>
+</div>
+<div class="hero-phones" aria-hidden="true"><figure class="phone p1"><img src="assets/kinto-screen1.jpg" alt="" loading="lazy"></figure><figure class="phone p2"><img src="assets/zikr-screen1.jpg" alt="" loading="lazy"></figure><figure class="phone p3"><img src="assets/fadz-screen1.jpg" alt="" loading="lazy"></figure></div>
 </div></section>
-<section id="apps" class="wrap sec"><h2>Nos applications</h2><div class="grid">
-<a class="card" href="/fadz.html"><img src="assets/fadz-icon.png" alt="" width="64" height="64">
-<div><h3>Fadz</h3><p class="muted">Ton coiffeur, maintenant.</p></div><span class="pill">Bientôt</span></a><a class="card" href="/zikr.html"><img src="assets/zikr-icon.png" alt="" width="64" height="64">
-<div><h3>Zikr</h3><p class="muted">Ton compagnon spirituel quotidien.</p></div><span class="pill">Disponible</span></a><a class="card" href="/kinto.html"><img src="assets/kinto-icon.png" alt="" width="64" height="64">
-<div><h3>Kinto</h3><p class="muted">Ton budget, sans effort.</p></div><span class="pill">Disponible</span></a></div></section>
-<section class="wrap sec"><div class="panel"><h2>À propos</h2>
-<p>Nour Groupe est le nom commercial de Mohamed Elhawawshi, entrepreneur individuel basé à Paris. Chaque application est conçue, développée et suivie en interne, avec un soin particulier pour la simplicité et le respect des données personnelles.</p></div></section>
+<section id="apps" class="wrap sec"><p class="eyebrow">Nos applications</p><h2 class="big">Trois apps, une même exigence.</h2>
+<article class="showcase ">
+<div class="sc-copy"><div class="sc-head"><img src="assets/fadz-icon.png" alt="" width="64" height="64"><div><h3>Fadz</h3><span class="pill">Bientôt</span></div></div>
+<p class="sc-tag">Ton coiffeur, maintenant.</p><p class="muted">Fadz met en relation clients et coiffeurs ou barbiers indépendants : réservation en quelques secondes, en salon ou à domicile, ou place dans la file d’attente en direct. Les professionnels gèrent leur agenda, leurs clients et leur activité au même endroit.</p>
+<ul class="feats"><li>Réservation en 3 secondes</li><li>Salon ou à domicile</li><li>File d’attente en direct</li></ul>
+<p><a class="btn" href="/fadz.html">Découvrir Fadz</a></p></div>
+<div class="sc-shots"><figure class="phone s1"><img src="assets/fadz-screen1.jpg" alt="Fadz" loading="lazy"></figure><figure class="phone s2"><img src="assets/fadz-screen2.jpg" alt="Fadz" loading="lazy"></figure></div>
+</article>
+<article class="showcase rev">
+<div class="sc-copy"><div class="sc-head"><img src="assets/zikr-icon.png" alt="" width="64" height="64"><div><h3>Zikr</h3><span class="pill">Disponible</span></div></div>
+<p class="sc-tag">Ton compagnon spirituel quotidien.</p><p class="muted">Zikr t’accompagne au quotidien avec le Coran, les Adhkar et des horaires de prière précis selon ta position. Une interface simple pour garder le lien avec tes routines spirituelles, où que tu sois.</p>
+<ul class="feats"><li>Coran</li><li>Adhkar</li><li>Horaires de prière</li></ul>
+<p><a class="btn" href="/zikr.html">Découvrir Zikr</a></p></div>
+<div class="sc-shots"><figure class="phone s1"><img src="assets/zikr-screen1.jpg" alt="Zikr" loading="lazy"></figure><figure class="phone s2"><img src="assets/zikr-screen2.jpg" alt="Zikr" loading="lazy"></figure></div>
+</article>
+<article class="showcase ">
+<div class="sc-copy"><div class="sc-head"><img src="assets/kinto-icon.png" alt="" width="64" height="64"><div><h3>Kinto</h3><span class="pill">Disponible</span></div></div>
+<p class="sc-tag">Ton budget, sans effort.</p><p class="muted">Kinto simplifie la gestion de ton budget : scanne tes reçus, suis tes dépenses par catégorie et garde une vue claire sur tes revenus et tes économies, le tout depuis une interface épurée.</p>
+<ul class="feats"><li>Scan des reçus</li><li>Dépenses par catégorie</li><li>Revenus & économies</li></ul>
+<p><a class="btn" href="/kinto.html">Découvrir Kinto</a></p></div>
+<div class="sc-shots"><figure class="phone s1"><img src="assets/kinto-screen1.jpg" alt="Kinto" loading="lazy"></figure><figure class="phone s2"><img src="assets/kinto-screen2.jpg" alt="Kinto" loading="lazy"></figure></div>
+</article>
+</section>
+<section class="wrap sec"><p class="eyebrow">Notre approche</p><h2 class="big">Fait pour durer.</h2>
+<div class="values">
+<div class="val"><span class="ico">✦</span><h3>Simple</h3><p>Chaque écran a un seul objectif. Pas de fonctions inutiles, pas de friction.</p></div>
+<div class="val"><span class="ico">◎</span><h3>Soigné</h3><p>Un design cohérent, fluide et lisible, en clair comme en sombre.</p></div>
+<div class="val"><span class="ico">⛨</span><h3>Transparent</h3><p>Une politique de confidentialité claire et accessible pour chaque application.</p></div>
+</div></section>
+<section class="wrap sec"><div class="band"><div><h2>Une question, une idée ?</h2><p class="muted">Écris-nous, on répond en général sous quelques jours.</p></div>
+<a class="btn" href="/contact.html">Nous contacter</a></div></section>
 </main>
 <footer class="foot"><div class="wrap">
 <div class="foot-row"><strong>Nour Groupe</strong><span>Des apps utiles, soignées et simples.</span></div>

@@ -39,3 +39,47 @@ h2{font-size:24px;margin:0 0 16px}
 .foot-row{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline}.foot-row span{color:var(--muted)}
 .foot-links{display:flex;flex-wrap:wrap;gap:6px 18px;margin:12px 0}.foot-links a{color:var(--muted);text-decoration:none}
 @media(max-width:560px){.hero{padding:44px 0 24px}.shots img{height:360px}}
+
+/* ---- v2 : rendu premium ---- */
+body{background-image:radial-gradient(1200px 500px at 50% -10%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%)}
+.hero{position:relative;overflow:hidden;padding:64px 0 24px}
+.glow{position:absolute;inset:-20% -10% auto -10%;height:520px;background:radial-gradient(40% 60% at 70% 40%,color-mix(in srgb,var(--accent2) 22%,transparent),transparent 70%),radial-gradient(40% 60% at 25% 30%,color-mix(in srgb,var(--accent) 26%,transparent),transparent 70%);filter:blur(30px);pointer-events:none}
+.hero-grid{position:relative;display:grid;gap:40px;grid-template-columns:1.1fr .9fr;align-items:center}
+.hero-copy h1{font-size:clamp(38px,6.4vw,68px)}
+.cta{margin:24px 0}
+.stats{display:flex;gap:28px;list-style:none;padding:0;margin:28px 0 0}
+.stats li{display:flex;flex-direction:column}.stats b{font-size:26px}.stats span{color:var(--muted);font-size:13px}
+.phone{margin:0;border-radius:34px;padding:7px;background:linear-gradient(160deg,#2b3142,#0d1017);box-shadow:0 30px 60px -20px rgba(0,0,0,.55),0 0 0 1px var(--line)}
+:root[data-theme=light] .phone{box-shadow:0 30px 60px -24px rgba(30,40,80,.35),0 0 0 1px var(--line)}
+.phone img{border-radius:28px;width:100%;height:auto;display:block}
+.hero-phones{position:relative;height:520px}
+.hero-phones .phone{position:absolute;width:210px}
+.hero-phones .p1{left:2%;top:50px;transform:rotate(-8deg)}
+.hero-phones .p2{left:28%;top:0;z-index:2;width:230px}
+.hero-phones .p3{right:0;top:70px;transform:rotate(8deg)}
+.hero-phones.one{height:480px}.hero-phones.one .p2{left:50%;transform:translateX(-50%);width:240px}
+@media(prefers-reduced-motion:no-preference){.hero-phones .p1{animation:fl 7s ease-in-out infinite}.hero-phones .p3{animation:fl 8s ease-in-out -2s infinite}.hero-phones .p2{animation:fl2 6s ease-in-out infinite}}
+@keyframes fl{50%{translate:0 -12px}}@keyframes fl2{50%{translate:0 -16px}}
+.big{font-size:clamp(28px,4.5vw,42px);letter-spacing:-.02em;margin:0 0 28px}
+.showcase{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;background:linear-gradient(180deg,var(--card),transparent);border:1px solid var(--line);border-radius:28px;padding:36px;margin-bottom:22px}
+.showcase.rev .sc-copy{order:2}
+.sc-head{display:flex;gap:16px;align-items:center;margin-bottom:12px}.sc-head img{border-radius:18px}.sc-head h3{margin:0 0 4px;font-size:28px}
+.sc-tag{font-size:20px;font-weight:600;margin:0 0 8px}
+.sc-shots{display:flex;gap:14px;justify-content:center}
+.sc-shots .phone{width:44%;max-width:190px}.sc-shots .s2{margin-top:36px}
+.values{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.val{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px}
+.val h3{margin:12px 0 6px}.val p{margin:0;color:var(--muted)}
+.ico{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:20px}
+.band{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;padding:32px;border-radius:26px;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 22%,var(--card)),color-mix(in srgb,var(--accent2) 14%,var(--card)));border:1px solid var(--line)}
+.band h2{margin:0 0 4px}.band p{margin:0}
+.info{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}.info h2{font-size:18px}
+.shots{justify-content:center;gap:18px}
+.shots img{height:auto;width:230px;border-radius:26px;flex:none}
+.card,.btn{transition:transform .15s,box-shadow .15s}.btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px -10px var(--accent)}
+@media(max-width:820px){
+ .hero-grid,.showcase{grid-template-columns:1fr}.showcase.rev .sc-copy{order:0}
+ .hero-phones{height:420px;margin-top:8px}.hero-phones .phone{width:150px}.hero-phones .p2{width:170px;left:30%}
+ .hero-phones.one .p2{width:190px}.showcase{padding:22px}
+ .shots{justify-content:flex-start}.shots img{width:190px}
+}
