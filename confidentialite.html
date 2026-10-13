@@ -11,13 +11,14 @@
 <meta name="theme-color" content="#0b0d12">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <script>try{var t=localStorage.getItem("ng-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t}catch(e){}</script>
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
-<header class="nav"><div class="wrap nav-in">
-<a class="brand" href="/"><span class="mark">N</span> Nour Groupe</a>
-<nav class="links"><a href="/#apps">Apps</a><a href="/contact.html">Contact</a>
-<button id="theme" aria-label="Changer de thème" type="button">◐</button></nav>
+<header class="pillnav"><div class="pill-in">
+<a class="brand" href="/" aria-label="Nour Groupe"><span class="mark">N</span><span class="bname">Nour Groupe</span></a>
+<nav class="plinks" aria-label="Navigation principale"><a href="/#apps">Apps</a><a href="/#services">Services</a><a href="/contact.html">Contact</a></nav>
+<div class="pctl"><button id="cmd-open" type="button" class="icbtn" aria-label="Ouvrir les raccourcis" title="Raccourcis · ⌘K">⌕</button>
+<button id="theme" class="icbtn" aria-label="Changer de thème" type="button">◐</button></div>
 </div></header>
 <main>
 <section class="wrap sec legal"><p><a class="back" href="/">← Nour Groupe</a></p><h1>Confidentialité</h1>
@@ -37,5 +38,26 @@
 <div class="foot-links"><a href="/mentions-legales.html">Mentions légales</a><a href="/confidentialite.html">Confidentialité</a><a href="/contact.html">Contact</a></div>
 <p class="small">© 2026 Nour Groupe — Mohamed Elhawawshi, entrepreneur individuel · SIRET 982 860 819 00019</p>
 </div></footer>
-<script>document.getElementById("theme").onclick=function(){var d=document.documentElement,t=d.dataset.theme==="dark"?"light":"dark";d.dataset.theme=t;try{localStorage.setItem("ng-theme",t)}catch(e){}}</script>
+<dialog class="cmd" id="cmd"><div class="cmd-panel">
+<label class="cmd-search"><span>⌕</span><input id="cmd-q" type="search" autocomplete="off" placeholder="Que veux-tu faire ?" aria-label="Rechercher une action"><kbd>ESC</kbd></label>
+<p class="cmd-label">Navigation</p><div id="cmd-items" class="cmd-items"></div>
+<div class="cmd-hint"><span><kbd>↑</kbd><kbd>↓</kbd> parcourir</span><span><kbd>↵</kbd> ouvrir</span><span><kbd>⌘K</kbd> raccourcis</span></div>
+</div></dialog>
+<script>
+(function(){
+var d=document.documentElement;
+function theme(){var t=d.dataset.theme==="dark"?"light":"dark";d.dataset.theme=t;try{localStorage.setItem("ng-theme",t)}catch(e){}}
+document.getElementById("theme").onclick=theme;
+var A=[["Accueil","/"],["Nos applications","/#apps"],["Fadz","/fadz.html"],["Zikr","/zikr.html"],["Kinto","/kinto.html"],["Services","/#services"],["Contact","/contact.html"],["Changer de thème",null,theme],["Copier l’adresse e-mail",null,function(){var m="contact@nourgroupe.com";(navigator.clipboard?navigator.clipboard.writeText(m):Promise.reject()).catch(function(){location.href="mailto:"+m})}],["Mentions légales","/mentions-legales.html"],["Confidentialité","/confidentialite.html"]];
+var dlg=document.getElementById("cmd"),q=document.getElementById("cmd-q"),box=document.getElementById("cmd-items"),act=0,cur=A;
+function render(){box.innerHTML="";cur.forEach(function(it,i){var b=document.createElement("button");b.type="button";b.className="cmd-item"+(i===act?" on":"");b.textContent=it[0];b.onclick=function(){run(it)};box.appendChild(b)});if(!cur.length)box.innerHTML='<p class="small" style="padding:12px">Aucune action trouvée</p>'}
+function run(it){dlg.close();if(it[2])it[2]();else location.href=it[1]}
+function open(){cur=A;act=0;q.value="";render();if(dlg.showModal)dlg.showModal();setTimeout(function(){q.focus()},30)}
+document.getElementById("cmd-open").onclick=open;
+document.addEventListener("keydown",function(e){if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k"){e.preventDefault();dlg.open?dlg.close():open()}});
+q.oninput=function(){var v=q.value.toLowerCase();cur=A.filter(function(x){return x[0].toLowerCase().indexOf(v)>-1});act=0;render()};
+q.onkeydown=function(e){if(e.key==="ArrowDown"){act=Math.min(act+1,cur.length-1);render();e.preventDefault()}else if(e.key==="ArrowUp"){act=Math.max(act-1,0);render();e.preventDefault()}else if(e.key==="Enter"&&cur[act]){run(cur[act])}};
+dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
+})();
+</script>
 </body></html>
