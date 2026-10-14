@@ -151,3 +151,6 @@ h1,h2,h3{letter-spacing:-.025em}
 :root[data-theme=light] .marquee{background:#fff}
 ::selection{background:color-mix(in srgb,var(--accent) 35%,transparent)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.case h4{margin:18px 0 6px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2)}
+.done{margin:0 0 14px;padding-left:18px;color:var(--muted)}.done li{margin:4px 0}
+.case .sc-shots .phone{width:60%;max-width:220px}

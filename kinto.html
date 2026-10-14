@@ -15,12 +15,12 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <meta property="og:image" content="https://nourgroupe.com/assets/og.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://nourgroupe.com/assets/og.jpg">
 <script>try{var t=localStorage.getItem("ng-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t}catch(e){}</script>
-<link rel="stylesheet" href="style.css?v=6">
+<link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 <header class="pillnav"><div class="pill-in">
 <a class="brand" href="/" aria-label="Nour Groupe"><span class="mark">N</span><span class="bname">Nour Groupe</span></a>
-<nav class="plinks" aria-label="Navigation principale"><a href="/#apps">Apps</a><a href="/#services">Services</a><a href="/contact.html">Contact</a></nav>
+<nav class="plinks" aria-label="Navigation principale"><a href="/#apps">Apps</a><a href="/#services">Services</a><a href="/projets.html">Projets</a><a href="/contact.html">Contact</a></nav>
 <div class="pctl"><button id="cmd-open" type="button" class="icbtn" aria-label="Ouvrir les raccourcis" title="Raccourcis · ⌘K">⌕</button>
 <button id="theme" class="icbtn" aria-label="Changer de thème" type="button">◐</button></div>
 </div></header>
@@ -59,7 +59,7 @@ function chk(){els.forEach(function(el){var r=el.getBoundingClientRect();if(r.to
 addEventListener('scroll',chk,{passive:true});addEventListener('load',chk);setTimeout(chk,300);setTimeout(function(){els.forEach(function(el){el.classList.add('in')})},5000)}}catch(e){}
 function theme(){var t=d.dataset.theme==="dark"?"light":"dark";d.dataset.theme=t;try{localStorage.setItem("ng-theme",t)}catch(e){}}
 document.getElementById("theme").onclick=theme;
-var A=[["Accueil","/"],["Nos applications","/#apps"],["Fadz","/fadz.html"],["Zikr","/zikr.html"],["Kinto","/kinto.html"],["Services","/#services"],["Contact","/contact.html"],["Changer de thème",null,theme],["Copier l’adresse e-mail",null,function(){var m="contact@nourgroupe.com";(navigator.clipboard?navigator.clipboard.writeText(m):Promise.reject()).catch(function(){location.href="mailto:"+m})}],["Mentions légales","/mentions-legales.html"],["Confidentialité","/confidentialite.html"]];
+var A=[["Accueil","/"],["Nos applications","/#apps"],["Fadz","/fadz.html"],["Zikr","/zikr.html"],["Kinto","/kinto.html"],["Services","/#services"],["Projets sur mesure","/projets.html"],["Contact","/contact.html"],["Changer de thème",null,theme],["Copier l’adresse e-mail",null,function(){var m="contact@nourgroupe.com";(navigator.clipboard?navigator.clipboard.writeText(m):Promise.reject()).catch(function(){location.href="mailto:"+m})}],["Mentions légales","/mentions-legales.html"],["Confidentialité","/confidentialite.html"]];
 var dlg=document.getElementById("cmd"),q=document.getElementById("cmd-q"),box=document.getElementById("cmd-items"),act=0,cur=A;
 function render(){box.innerHTML="";cur.forEach(function(it,i){var b=document.createElement("button");b.type="button";b.className="cmd-item"+(i===act?" on":"");b.textContent=it[0];b.onclick=function(){run(it)};box.appendChild(b)});if(!cur.length)box.innerHTML='<p class="small" style="padding:12px">Aucune action trouvée</p>'}
 function run(it){dlg.close();if(it[2])it[2]();else location.href=it[1]}
