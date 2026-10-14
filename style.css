@@ -137,3 +137,17 @@ kbd{padding:2px 6px;border:1px solid var(--line);border-radius:6px;color:var(--m
 .sc-shots .phone{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
 .foot{background:color-mix(in srgb,var(--card) 50%,transparent)}
 @media(prefers-reduced-motion:reduce){.mq-track,.dot{animation:none}}
+
+/* ---- v6 ---- */
+body{font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-feature-settings:"cv11","ss01"}
+h1,h2,h3{letter-spacing:-.025em}
+.hero-phones .phone{will-change:transform}
+.hero-phones{--mx:0;--my:0}
+.hero-phones .p2{translate:calc(var(--mx)*-10px) calc(var(--my)*-8px)}
+.hero-phones .p1{translate:calc(var(--mx)*14px) calc(var(--my)*10px)}
+.hero-phones .p3{translate:calc(var(--mx)*-16px) calc(var(--my)*12px)}
+:root[data-theme=light] .glow{opacity:.55}
+:root[data-theme=light] .phone{background:linear-gradient(160deg,#dfe3ee,#bcc3d4)}
+:root[data-theme=light] .marquee{background:#fff}
+::selection{background:color-mix(in srgb,var(--accent) 35%,transparent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
