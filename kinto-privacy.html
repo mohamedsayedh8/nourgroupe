@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#0b0d12">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <script>try{var t=localStorage.getItem("ng-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t}catch(e){}</script>
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 <header class="pillnav"><div class="pill-in">
@@ -98,6 +98,9 @@
 <script>
 (function(){
 var d=document.documentElement;
+try{if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('rv');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});var els=document.querySelectorAll('.showcase,.val,.steps li,.faq details,.band,.panel,.shots img');els.forEach(function(el){el.classList.add('rvi');io.observe(el)});
+function chk(){els.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight*0.95)el.classList.add('in')})}
+addEventListener('scroll',chk,{passive:true});addEventListener('load',chk);setTimeout(chk,300);setTimeout(function(){els.forEach(function(el){el.classList.add('in')})},5000)}}catch(e){}
 function theme(){var t=d.dataset.theme==="dark"?"light":"dark";d.dataset.theme=t;try{localStorage.setItem("ng-theme",t)}catch(e){}}
 document.getElementById("theme").onclick=theme;
 var A=[["Accueil","/"],["Nos applications","/#apps"],["Fadz","/fadz.html"],["Zikr","/zikr.html"],["Kinto","/kinto.html"],["Services","/#services"],["Contact","/contact.html"],["Changer de thème",null,theme],["Copier l’adresse e-mail",null,function(){var m="contact@nourgroupe.com";(navigator.clipboard?navigator.clipboard.writeText(m):Promise.reject()).catch(function(){location.href="mailto:"+m})}],["Mentions légales","/mentions-legales.html"],["Confidentialité","/confidentialite.html"]];
