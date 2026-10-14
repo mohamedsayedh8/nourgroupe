@@ -154,3 +154,23 @@ h1,h2,h3{letter-spacing:-.025em}
 .case h4{margin:18px 0 6px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2)}
 .done{margin:0 0 14px;padding-left:18px;color:var(--muted)}.done li{margin:4px 0}
 .case .sc-shots .phone{width:60%;max-width:220px}
+
+/* ---- contact v2 ---- */
+.chan{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:26px}
+.chan-i{display:flex;gap:14px;align-items:center;padding:16px 18px;border:1px solid var(--line);border-radius:18px;background:var(--card);color:var(--fg);text-decoration:none;transition:transform .15s,border-color .15s}
+.chan-i:hover{transform:translateY(-2px);border-color:var(--accent)}
+.chan-i b{display:block}.chan-i span:not(.ico){color:var(--muted);font-size:14px}
+.pform{display:grid;gap:18px;margin-top:18px}
+.pform fieldset{border:0;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.pform legend{font-size:13px;font-weight:600;color:var(--muted);padding:0;margin-bottom:8px;width:100%}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip span{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:99px;background:var(--bg);cursor:pointer;font-size:14px;transition:all .15s}
+.chip input:checked+span{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 16%,var(--bg));color:var(--fg)}
+.chip input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+.frow{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.pform label{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--muted)}
+.pform input[type=text],.pform textarea{font:inherit;font-size:15px;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px 14px;width:100%}
+.pform input[type=text]:focus,.pform textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+.sups{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:18px}
+.sup{display:flex;gap:14px;align-items:center;padding:16px;border:1px solid var(--line);border-radius:18px;background:var(--card)}
+.sup img{border-radius:12px}.sup h3{margin:0 0 2px}.sup p{margin:4px 0 0}
