@@ -1,4 +1,5 @@
 .netlify
-build.py
 .DS_Store
-logo/
+logo/*
+!logo/pt-*.json
+__pycache__/

@@ -10,6 +10,8 @@
 <meta property="og:title" content="Confidentialité — Nour Groupe"><meta property="og:description" content="Politique de confidentialité du site nourgroupe.com et liens vers celle de chaque application."><meta property="og:url" content="https://nourgroupe.com/confidentialite.html">
 <meta name="theme-color" content="#0b0d12">
 <meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:locale" content="fr_FR">
+<link rel="alternate" hreflang="fr" href="https://nourgroupe.com/confidentialite.html"><link rel="alternate" hreflang="en" href="https://nourgroupe.com/en/confidentialite.html"><link rel="alternate" hreflang="ar" href="https://nourgroupe.com/ar/confidentialite.html"><link rel="alternate" hreflang="x-default" href="https://nourgroupe.com/confidentialite.html">
 <meta name="author" content="Nour Groupe">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png">
@@ -17,14 +19,27 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <meta property="og:image" content="https://nourgroupe.com/assets/og.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://nourgroupe.com/assets/og.jpg">
-<script>try{var t=localStorage.getItem("ng-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t}catch(e){}</script>
-<link rel="stylesheet" href="style.css?v=14">
+<script>(function(){try{var d=document.documentElement,t=null,L=d.lang||"fr";
+try{t=localStorage.getItem("ng-theme")}catch(e){}
+var mq=matchMedia("(prefers-color-scheme: light)");
+function ap(){d.dataset.theme=(t==="light"||t==="dark")?t:(mq.matches?"light":"dark")}ap();
+if(mq.addEventListener)mq.addEventListener("change",function(){try{t=localStorage.getItem("ng-theme")}catch(e){t=null}if(t!=="light"&&t!=="dark")ap()});
+var pref=null;try{pref=localStorage.getItem("ng-lang")}catch(e){}
+if(!/bot|crawl|spider|slurp|lighthouse|facebookexternalhit|preview/i.test(navigator.userAgent)){
+var want=pref;
+if(!want&&L==="fr"){var ls=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||"fr"];
+for(var i=0;i<ls.length;i++){var c=String(ls[i]||"").toLowerCase().split("-")[0];if(c==="fr"||c==="en"||c==="ar"){want=c;break}}}
+if(want&&want!==L&&(want==="fr"||want==="en"||want==="ar")){
+var p=location.pathname.replace(/^\/(en|ar)(?=\/|$)/,"")||"/";
+location.replace((want==="fr"?"":"/"+want)+p+location.search+location.hash)}}
+}catch(e){}})();</script>
+<link rel="stylesheet" href="/style.css?v=15">
 </head>
 <body>
 <header class="pillnav"><div class="pill-in">
 <a class="brand" href="/" aria-label="Nour Groupe"><img class="mark-img" src="/assets/logo-icon-dark.png" alt="" width="30" height="30"><span class="bname">Nour Groupe</span></a>
 <nav class="plinks" aria-label="Navigation principale"><a href="/#apps">Apps</a><a href="/#services">Services</a><a href="/projets.html">Projets</a><a href="/contact.html">Contact</a></nav>
-<div class="pctl"><button id="cmd-open" type="button" class="icbtn" aria-label="Ouvrir les raccourcis" title="Raccourcis · ⌘K">⌕</button>
+<div class="pctl"><div class="lang"><button id="lang-open" type="button" class="icbtn lbtn" aria-haspopup="true" aria-expanded="false" aria-label="Langue">FR</button><div class="lmenu" id="lmenu" hidden><a href="/confidentialite.html" data-l="fr" hreflang="fr" lang="fr">Français</a><a href="/en/confidentialite.html" data-l="en" hreflang="en" lang="en">English</a><a href="/ar/confidentialite.html" data-l="ar" hreflang="ar" lang="ar" dir="rtl">العربية</a></div></div><button id="cmd-open" type="button" class="icbtn" aria-label="Ouvrir les raccourcis" title="Raccourcis · ⌘K">⌕</button>
 <button id="theme" class="icbtn" aria-label="Changer de thème" type="button">◐</button></div>
 </div></header>
 <main>
@@ -59,10 +74,11 @@ function chk(){els.forEach(function(el){var r=el.getBoundingClientRect();if(r.to
 addEventListener('scroll',chk,{passive:true});addEventListener('load',chk);setTimeout(chk,300);setTimeout(function(){els.forEach(function(el){el.classList.add('in')})},5000)}}catch(e){}
 function theme(){var t=d.dataset.theme==="dark"?"light":"dark";d.dataset.theme=t;try{localStorage.setItem("ng-theme",t)}catch(e){}}
 document.getElementById("theme").onclick=theme;
-var A=[["Accueil","/"],["Nos applications","/#apps"],["Fadz","/fadz.html"],["Zikr","/zikr.html"],["Kinto","/kinto.html"],["Services","/#services"],["Projets sur mesure","/projets.html"],["Contact","/contact.html"],["Changer de thème",null,theme],["Appeler le 07 53 41 88 24","tel:+33753418824"],["Copier l’adresse e-mail",null,function(){var m="contact@nourgroupe.com";(navigator.clipboard?navigator.clipboard.writeText(m):Promise.reject()).catch(function(){location.href="mailto:"+m})}],["Mentions légales","/mentions-legales.html"],["Confidentialité","/confidentialite.html"]];
+var lo=document.getElementById("lang-open"),lm=document.getElementById("lmenu");lo.onclick=function(e){e.stopPropagation();var h=lm.hidden;lm.hidden=!h;lo.setAttribute("aria-expanded",String(h))};document.addEventListener("click",function(){lm.hidden=true;lo.setAttribute("aria-expanded","false")});lm.addEventListener("click",function(e){var a=e.target.closest("a");if(a){try{localStorage.setItem("ng-lang",a.dataset.l)}catch(x){}}});
+var A=[["Accueil","/"],["Nos applications","/#apps"],["Fadz","/fadz.html"],["Zikr","/zikr.html"],["Kinto","/kinto.html"],["Services","/#services"],["Projets sur mesure","/projets.html"],["Contact","/contact.html"],["Changer de thème",null,theme],["Thème automatique (système)",null,function(){try{localStorage.removeItem("ng-theme")}catch(e){}d.dataset.theme=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"}],["Français","/confidentialite.html",null,"fr"],["English","/en/confidentialite.html",null,"en"],["العربية","/ar/confidentialite.html",null,"ar"],["Appeler le 07 53 41 88 24","tel:+33753418824"],["Copier l’adresse e-mail",null,function(){var m="contact@nourgroupe.com";(navigator.clipboard?navigator.clipboard.writeText(m):Promise.reject()).catch(function(){location.href="mailto:"+m})}],["Mentions légales","/mentions-legales.html"],["Confidentialité","/confidentialite.html"]];
 var dlg=document.getElementById("cmd"),q=document.getElementById("cmd-q"),box=document.getElementById("cmd-items"),act=0,cur=A;
 function render(){box.innerHTML="";cur.forEach(function(it,i){var b=document.createElement("button");b.type="button";b.className="cmd-item"+(i===act?" on":"");b.textContent=it[0];b.onclick=function(){run(it)};box.appendChild(b)});if(!cur.length)box.innerHTML='<p class="small" style="padding:12px">Aucune action trouvée</p>'}
-function run(it){dlg.close();if(it[2])it[2]();else location.href=it[1]}
+function run(it){dlg.close();if(it[3]){try{localStorage.setItem("ng-lang",it[3])}catch(e){}}if(it[2])it[2]();else location.href=it[1]}
 function open(){cur=A;act=0;q.value="";render();if(dlg.showModal)dlg.showModal();setTimeout(function(){q.focus()},30)}
 document.getElementById("cmd-open").onclick=open;
 document.addEventListener("keydown",function(e){if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k"){e.preventDefault();dlg.open?dlg.close():open()}});
