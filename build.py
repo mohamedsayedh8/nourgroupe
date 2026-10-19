@@ -64,7 +64,7 @@ def head(title,desc,path):
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <meta property="og:image" content="https://nourgroupe.com/assets/og.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://nourgroupe.com/assets/og.jpg">
 <script>{HEAD_JS}</script>
-<link rel="stylesheet" href="/style.css?v=15">
+<link rel="stylesheet" href="/style.css?v=16">
 </head>
 <body>
 <header class="pillnav"><div class="pill-in">
@@ -104,11 +104,12 @@ dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
 </script>'''
 def foot():
     return f'''</main>
-<footer class="foot"><div class="wrap">
-<div class="foot-row"><strong>Nour Groupe</strong><span>Des apps utiles, soignées et simples.</span></div>
-<div class="foot-links"><a href="/projets.html">Projets</a><a href="/contact.html">Contact</a><a href="https://wa.me/33753418824" rel="noopener">WhatsApp</a><a href="tel:+33753418824">07 53 41 88 24</a><a href="/mentions-legales.html">Mentions légales</a><a href="/confidentialite.html">Confidentialité</a></div>
-<p class="small">© 2026 Nour Groupe — Mohamed Elhawawshi, entrepreneur individuel · SIRET 982 860 819 00019</p>
-</div></footer>
+<footer class="foot"><div class="wrap foot-cols">
+<div><strong class="fbrand">Nour Groupe</strong><p class="small">Studio de développement · Paris</p></div>
+<div><h4>Entreprise</h4><a href="/projets.html">Projets</a><a href="/contact.html">Contact</a><a href="/confidentialite.html">Confidentialité</a><a href="/mentions-legales.html">Mentions légales</a></div>
+<div><h4>Produits</h4><a href="/fadz.html">Fadz</a><a href="/zikr.html">Zikr</a><a href="/kinto.html">Kinto</a></div>
+<div><h4>Contact</h4><a href="mailto:contact@nourgroupe.com">contact@nourgroupe.com</a><a href="tel:+33753418824">07 53 41 88 24</a><a href="https://wa.me/33753418824" rel="noopener">WhatsApp</a></div>
+</div><div class="wrap foot-bottom"><p class="small">© 2026 Nour Groupe — Mohamed Elhawawshi, entrepreneur individuel · SIRET 982 860 819 00019</p></div></footer>
 {CMD}
 </body></html>
 '''
@@ -138,18 +139,43 @@ def abtns(a):
 LD='''<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Nour Groupe","url":"https://nourgroupe.com","logo":"https://nourgroupe.com/assets/icon-512.png","email":"contact@nourgroupe.com","telephone":"+33753418824","address":{"@type":"PostalAddress","addressLocality":"Paris","addressCountry":"FR"},"description":"Nour Groupe conçoit des applications mobiles, des sites web et des outils sur mesure : Fadz, Zikr, Kinto."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Nour Groupe","url":"https://nourgroupe.com","inLanguage":"fr"}</script>
 '''
+ICON={
+ "pin":'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg>',
+ "device":'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>',
+ "layers":'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="m3 13 9 5 9-5"/></svg>',
+ "wrench":'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5a4 4 0 0 0 4.9 4.9L21 13l-8 8-3.2-3.2L3 21l.5-6.8L10.7 7A4 4 0 0 1 14.5 6.5z"/></svg>',
+ "globe":'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>',
+ "pen":'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1-4L16.5 4.5a2.1 2.1 0 0 1 3 3L8 19l-4 1z"/></svg>',
+ "shield":'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.4 7.5 9.5 4.4-1.1 7.5-4.9 7.5-9.5V6L12 3z"/><path d="m9 12 2.2 2.2L15.5 10"/></svg>',
+ "target":'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg>',
+ "route":'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6.5a3.5 3.5 0 0 0 0-7h-5a3.5 3.5 0 0 1 0-7H16"/></svg>',
+ "support":'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/></svg>',
+}
 s=head("Nour Groupe — Des apps utiles et soignées","Nour Groupe conçoit des applications mobiles et web utiles, soignées et simples : Fadz, Zikr, Kinto.","/")
 s+=LD+f'''<section class="hero"><div class="glow"></div><div class="wrap hero-grid">
 <div class="hero-copy">
-<p class="avail"><span class="dot"></span>Ouvert aux nouveaux projets</p>
-<p class="eyebrow">Éditeur d’applications · Paris</p>
-<h1>Des apps utiles,<br><span class="grad">soignées et simples.</span></h1>
-<p class="lead">Nour Groupe conçoit et publie ses propres applications, et réalise vos projets numériques sur mesure : applications, sites web et outils.</p>
-<p class="cta"><a class="btn" href="#apps">Découvrir les apps</a> <a class="btn ghost" href="/contact.html">Nous contacter</a></p>
-
+<p class="eyebrow">Studio de développement · Paris</p>
+<h1>Nous concevons vos applications<br><span class="grad">et outils numériques.</span></h1>
+<p class="lead">Nour Groupe est un studio de développement basé à Paris : applications mobiles, sites web et plateformes sur mesure, du cahier des charges à la publication.</p>
+<p class="cta"><a class="btn" href="/contact.html">Demander un devis</a> <a class="btn ghost" href="/projets.html">Voir nos réalisations</a></p>
 </div>
 <div class="hero-phones" aria-hidden="true">{phone("kinto-screen1.jpg","","p1")}{phone("zikr-screen1.jpg","","p2")}{phone("fadz-screen1.jpg","","p3")}</div>
 </div></section>
+<section class="wrap facts-wrap"><ul class="facts">
+<li>{ICON["pin"]}<span>Basés à Paris</span></li>
+<li>{ICON["device"]}<span>iOS · Android · Web</span></li>
+<li>{ICON["route"]}<span>Du design à la publication</span></li>
+<li>{ICON["support"]}<span>Suivi après lancement</span></li>
+</ul></section>
+<section id="services" class="wrap sec"><div class="sec-head"><div><p class="eyebrow">Expertise</p><h2 class="big">Ce que nous réalisons.</h2>
+<p class="lead">Entreprises, associations ou particuliers : si vous avez besoin d’une application, d’un site ou d’un outil sur mesure, Nour Groupe s’en charge, de l’idée à la mise en ligne.</p></div><img class="sec-mascot" src="/assets/mascotte-3.png" alt="" width="180" height="320" loading="lazy"></div>
+<div class="svc">
+<div class="svc-i"><span class="ico">{ICON["device"]}</span><h3>Applications mobiles</h3><p>Apps iOS et Android, de la conception à la publication sur les stores.</p></div>
+<div class="svc-i"><span class="ico">{ICON["globe"]}</span><h3>Sites web &amp; plateformes</h3><p>Sites vitrines, réservation en ligne, espaces clients et outils métiers.</p></div>
+<div class="svc-i"><span class="ico">{ICON["wrench"]}</span><h3>Outils métiers sur mesure</h3><p>Espaces clients, back-offices et automatisations adaptés à votre activité.</p></div>
+<div class="svc-i"><span class="ico">{ICON["pen"]}</span><h3>Design &amp; accompagnement</h3><p>Identité, maquettes, mise en ligne et suivi après lancement.</p></div>
+</div>
+<p><a class="btn" href="/contact.html">Parler de mon projet</a></p></section>
 <section id="apps" class="wrap sec"><p class="eyebrow">Nos applications</p><h2 class="big">Trois apps, une même exigence.</h2>
 '''
 for i,a in enumerate(APPS):
@@ -162,15 +188,16 @@ for i,a in enumerate(APPS):
 <div class="sc-shots">{phone(a['shots'][0],a['name'],'s1')}{phone(a['shots'][1],a['name'],'s2')}</div>
 </article>
 '''
-s+='''</section>
-<section id="services" class="wrap sec"><div class="sec-head"><div><p class="eyebrow">Services</p><h2 class="big">Un projet ? On le réalise.</h2>
-<p class="lead">Entreprises, associations ou particuliers : si vous avez besoin d’une application, d’un site ou d’un outil sur mesure, Nour Groupe s’en charge, de l’idée à la mise en ligne.</p></div><img class="sec-mascot" src="/assets/mascotte-3.png" alt="" width="180" height="320" loading="lazy"></div>
-<div class="values">
-<div class="val"><span class="ico">▣</span><h3>Applications mobiles</h3><p>Apps iOS et Android, de la conception à la publication sur les stores.</p></div>
-<div class="val"><span class="ico">◈</span><h3>Sites web &amp; plateformes</h3><p>Sites vitrines, réservation en ligne, espaces clients et outils métiers.</p></div>
-<div class="val"><span class="ico">✎</span><h3>Design &amp; accompagnement</h3><p>Identité, maquettes, mise en ligne et suivi après lancement.</p></div>
-</div>
-<p><a class="btn" href="/contact.html">Parler de mon projet</a></p></section>
+s+=f'''</section>
+<section class="wrap sec"><p class="eyebrow">Pourquoi Nour Groupe</p><h2 class="big">Un partenaire, du début à la fin.</h2>
+<div class="why">
+<div class="why-i"><span class="ico">{ICON["target"]}</span><h3>Sur mesure</h3><p>Chaque projet est conçu autour de votre besoin, pas d’un modèle générique.</p></div>
+<div class="why-i"><span class="ico">{ICON["route"]}</span><h3>De l’idée à la publication</h3><p>Conception, développement, mise en ligne et publication sur les stores par la même équipe.</p></div>
+<div class="why-i"><span class="ico">{ICON["shield"]}</span><h3>Données respectées</h3><p>Collecte minimale et politique de confidentialité claire pour chaque application.</p></div>
+<div class="why-i"><span class="ico">{ICON["support"]}</span><h3>Suivi après lancement</h3><p>Corrections, évolutions et assistance technique une fois le produit en ligne.</p></div>
+</div></section>
+<section class="wrap sec"><p class="eyebrow">Technologies</p><h2 class="big">Les outils que nous maîtrisons.</h2>
+<ul class="tech"><li>Swift · SwiftUI</li><li>Kotlin · Jetpack Compose</li><li>React Native · Expo</li><li>Next.js · React</li><li>Firebase</li><li>Supabase</li></ul></section>
 <section class="wrap sec"><p class="eyebrow">Comment on travaille</p><h2 class="big">Du premier échange au lancement.</h2>
 <ol class="steps">
 <li><b>01</b><h3>Échange</h3><p>On cadre votre besoin, vos objectifs et vos contraintes.</p></li>
@@ -178,6 +205,15 @@ s+='''</section>
 <li><b>03</b><h3>Développement</h3><p>Réalisation par étapes, avec des points réguliers.</p></li>
 <li><b>04</b><h3>Lancement</h3><p>Mise en ligne, publication sur les stores et suivi.</p></li>
 </ol></section>
+<section class="wrap sec"><div class="about">
+<div><p class="eyebrow">L’entreprise</p><h2 class="big">Un studio indépendant, basé à Paris.</h2>
+<p class="muted">Nour Groupe conçoit et publie ses propres applications, et réalise des projets sur mesure pour des entreprises, des associations et des particuliers.</p></div>
+<dl class="card-facts">
+<div><dt>Siège</dt><dd>Paris, France</dd></div>
+<div><dt>Statut</dt><dd>Entreprise individuelle</dd></div>
+<div><dt>Domaines</dt><dd>Applications, web, plateformes</dd></div>
+<div><dt>Contact</dt><dd><a href="mailto:{MAIL}">{MAIL}</a><br><a href="tel:+33753418824">07 53 41 88 24</a></dd></div>
+</dl></div></section>
 <section class="wrap sec"><p class="eyebrow">Questions fréquentes</p><h2 class="big">Ce qu’on nous demande souvent.</h2>
 <div class="faq">
 <details><summary>Quels types de projets réalisez-vous ?</summary><p>Applications mobiles iOS et Android, sites vitrines, plateformes de réservation, espaces clients et outils internes.</p></details>
@@ -185,14 +221,8 @@ s+='''</section>
 <details><summary>Vous occupez-vous de la publication sur les stores ?</summary><p>Oui, de la préparation des fiches App Store et Google Play jusqu’à la publication.</p></details>
 <details><summary>Peut-on vous confier la suite après le lancement ?</summary><p>Oui : corrections, évolutions et suivi technique peuvent être assurés après la mise en ligne.</p></details>
 </div></section>
-<section class="wrap sec"><div class="sec-head"><div><p class="eyebrow">Notre approche</p><h2 class="big">Fait pour durer.</h2></div><img class="sec-mascot" src="/assets/mascotte-1.png" alt="" width="180" height="278" loading="lazy"></div>
-<div class="values">
-<div class="val"><span class="ico">✦</span><h3>Simple</h3><p>Chaque écran a un seul objectif. Pas de fonctions inutiles, pas de friction.</p></div>
-<div class="val"><span class="ico">◎</span><h3>Soigné</h3><p>Un design cohérent, fluide et lisible, en clair comme en sombre.</p></div>
-<div class="val"><span class="ico">⛨</span><h3>Transparent</h3><p>Une politique de confidentialité claire et accessible pour chaque application.</p></div>
-</div></section>
 <section class="wrap sec"><div class="band"><img class="band-mascot" src="/assets/mascotte-2.png" alt="" width="150" height="232"><div><h2>Un projet, une question ?</h2><p class="muted">Écris-nous, on répond en général sous quelques jours.</p></div>
-<a class="btn" href="/contact.html">Nous contacter</a></div></section>
+<div class="band-btns"><a class="btn" href="/contact.html">Nous contacter</a> <a class="btn ghost" href="https://wa.me/33753418824" rel="noopener">WhatsApp</a></div></div></section>
 '''+foot()
 write("index.html",s)
 

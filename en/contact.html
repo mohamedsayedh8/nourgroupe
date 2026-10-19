@@ -33,7 +33,7 @@ if(want&&want!==L&&(want==="fr"||want==="en"||want==="ar")){
 var p=location.pathname.replace(/^\/(en|ar)(?=\/|$)/,"")||"/";
 location.replace((want==="fr"?"":"/"+want)+p+location.search+location.hash)}}
 }catch(e){}})();</script>
-<link rel="stylesheet" href="/style.css?v=15">
+<link rel="stylesheet" href="/style.css?v=16">
 </head>
 <body>
 <header class="pillnav"><div class="pill-in">
@@ -83,11 +83,12 @@ function upd(){var b=body(),sub="Project: "+v("type");document.getElementById("p
 f.addEventListener("input",upd);f.addEventListener("change",upd);upd()})();
 </script>
 </main>
-<footer class="foot"><div class="wrap">
-<div class="foot-row"><strong>Nour Groupe</strong><span>Useful, polished and simple apps.</span></div>
-<div class="foot-links"><a href="/en/projets.html">Projects</a><a href="/en/contact.html">Contact</a><a href="https://wa.me/33753418824" rel="noopener">WhatsApp</a><a href="tel:+33753418824">07 53 41 88 24</a><a href="/en/mentions-legales.html">Legal notice</a><a href="/en/confidentialite.html">Privacy</a></div>
-<p class="small">© 2026 Nour Groupe — Mohamed Elhawawshi, sole proprietor · SIRET 982 860 819 00019</p>
-</div></footer>
+<footer class="foot"><div class="wrap foot-cols">
+<div><strong class="fbrand">Nour Groupe</strong><p class="small">Development studio · Paris</p></div>
+<div><h4>Company</h4><a href="/en/projets.html">Projects</a><a href="/en/contact.html">Contact</a><a href="/en/confidentialite.html">Privacy</a><a href="/en/mentions-legales.html">Legal notice</a></div>
+<div><h4>Products</h4><a href="/en/fadz.html">Fadz</a><a href="/en/zikr.html">Zikr</a><a href="/en/kinto.html">Kinto</a></div>
+<div><h4>Contact</h4><a href="mailto:contact@nourgroupe.com">contact@nourgroupe.com</a><a href="tel:+33753418824">07 53 41 88 24</a><a href="https://wa.me/33753418824" rel="noopener">WhatsApp</a></div>
+</div><div class="wrap foot-bottom"><p class="small">© 2026 Nour Groupe — Mohamed Elhawawshi, sole proprietor · SIRET 982 860 819 00019</p></div></footer>
 <dialog class="cmd" id="cmd"><div class="cmd-panel">
 <label class="cmd-search"><span>⌕</span><input id="cmd-q" type="search" autocomplete="off" placeholder="What would you like to do?" aria-label="Search an action"><kbd>ESC</kbd></label>
 <p class="cmd-label">Navigation</p><div id="cmd-items" class="cmd-items"></div>

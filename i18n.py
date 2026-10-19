@@ -212,3 +212,49 @@ EN["Éditeur, hébergement et informations légales du site Nour Groupe."] = "Pu
 AR["Éditeur, hébergement et informations légales du site Nour Groupe."] = "الناشر والاستضافة والمعلومات القانونية لموقع Nour Groupe."
 EN["Politique de confidentialité du site nourgroupe.com et liens vers celle de chaque application."] = "Privacy policy of nourgroupe.com and links to the policy of each app."
 AR["Politique de confidentialité du site nourgroupe.com et liens vers celle de chaque application."] = "سياسة الخصوصية لموقع nourgroupe.com وروابط سياسة كل تطبيق."
+
+# --- refonte accueil « entreprise »
+EN.update({
+"Studio de développement · Paris":"Development studio · Paris",
+"Nous concevons vos applications":"We design your apps",
+"et outils numériques.":"and digital tools.",
+"Nour Groupe est un studio de développement basé à Paris : applications mobiles, sites web et plateformes sur mesure, du cahier des charges à la publication.":"Nour Groupe is a development studio based in Paris: mobile apps, websites and custom platforms, from the brief to publication.",
+"Demander un devis":"Request a quote","Voir nos réalisations":"See our work",
+"Basés à Paris":"Based in Paris","iOS · Android · Web":"iOS · Android · Web","Du design à la publication":"From design to publication","Suivi après lancement":"Post-launch support",
+"Expertise":"Expertise","Ce que nous réalisons.":"What we build.",
+"Outils métiers sur mesure":"Custom business tools",
+"Espaces clients, back-offices et automatisations adaptés à votre activité.":"Customer portals, back offices and automations tailored to your business.",
+"Pourquoi Nour Groupe":"Why Nour Groupe","Un partenaire, du début à la fin.":"One partner, from start to finish.",
+"Sur mesure":"Tailor-made","Chaque projet est conçu autour de votre besoin, pas d’un modèle générique.":"Every project is built around your need, not a generic template.",
+"De l’idée à la publication":"From idea to publication","Conception, développement, mise en ligne et publication sur les stores par la même équipe.":"Design, development, launch and store publication by the same team.",
+"Données respectées":"Respected data","Collecte minimale et politique de confidentialité claire pour chaque application.":"Minimal data collection and a clear privacy policy for every app.",
+"Corrections, évolutions et assistance technique une fois le produit en ligne.":"Fixes, updates and technical assistance once the product is live.",
+"Technologies":"Technologies","Les outils que nous maîtrisons.":"The tools we master.",
+"L’entreprise":"The company","Un studio indépendant, basé à Paris.":"An independent studio based in Paris.",
+"Nour Groupe conçoit et publie ses propres applications, et réalise des projets sur mesure pour des entreprises, des associations et des particuliers.":"Nour Groupe designs and publishes its own apps, and builds custom projects for companies, associations and individuals.",
+"Siège":"Location","Statut":"Status","Entreprise individuelle":"Sole proprietorship","Domaines":"Fields","Applications, web, plateformes":"Apps, web, platforms",
+"Produits":"Products",
+})
+AR.update({
+"Studio de développement · Paris":"استوديو تطوير · باريس",
+"Nous concevons vos applications":"نصمّم تطبيقاتكم",
+"et outils numériques.":"وأدواتكم الرقمية.",
+"Nour Groupe est un studio de développement basé à Paris : applications mobiles, sites web et plateformes sur mesure, du cahier des charges à la publication.":"Nour Groupe استوديو تطوير مقره باريس: تطبيقات هاتف ومواقع ويب ومنصات حسب الطلب، من دفتر الشروط إلى النشر.",
+"Demander un devis":"اطلب عرض سعر","Voir nos réalisations":"اطّلع على أعمالنا",
+"Basés à Paris":"مقرّنا في باريس","iOS · Android · Web":"iOS · Android · ويب","Du design à la publication":"من التصميم إلى النشر","Suivi après lancement":"متابعة بعد الإطلاق",
+"Expertise":"الخبرة","Ce que nous réalisons.":"ما ننجزه.",
+"Outils métiers sur mesure":"أدوات مهنية حسب الطلب",
+"Espaces clients, back-offices et automatisations adaptés à votre activité.":"فضاءات للعملاء ولوحات إدارة وأتمتة مصمّمة وفق نشاطك.",
+"Pourquoi Nour Groupe":"لماذا Nour Groupe","Un partenaire, du début à la fin.":"شريك واحد من البداية إلى النهاية.",
+"Sur mesure":"حسب الطلب","Chaque projet est conçu autour de votre besoin, pas d’un modèle générique.":"كل مشروع يُبنى حول حاجتك، لا حول قالب جاهز.",
+"De l’idée à la publication":"من الفكرة إلى النشر","Conception, développement, mise en ligne et publication sur les stores par la même équipe.":"التصميم والتطوير والإطلاق والنشر على المتاجر من فريق واحد.",
+"Données respectées":"بيانات محترمة","Collecte minimale et politique de confidentialité claire pour chaque application.":"جمع أدنى للبيانات وسياسة خصوصية واضحة لكل تطبيق.",
+"Corrections, évolutions et assistance technique une fois le produit en ligne.":"تصحيحات وتحديثات ومساعدة تقنية بعد إطلاق المنتج.",
+"Technologies":"التقنيات","Les outils que nous maîtrisons.":"الأدوات التي نتقنها.",
+"L’entreprise":"الشركة","Un studio indépendant, basé à Paris.":"استوديو مستقل مقره باريس.",
+"Nour Groupe conçoit et publie ses propres applications, et réalise des projets sur mesure pour des entreprises, des associations et des particuliers.":"تصمّم Nour Groupe تطبيقاتها الخاصة وتنشرها، وتنجز مشاريع حسب الطلب للشركات والجمعيات والأفراد.",
+"Siège":"المقر","Statut":"الصفة","Entreprise individuelle":"مؤسسة فردية","Domaines":"المجالات","Applications, web, plateformes":"تطبيقات، ويب، منصات",
+"Produits":"المنتجات",
+})
+for _d in (EN, AR):
+    for _t in ("Swift · SwiftUI","Kotlin · Jetpack Compose","React Native · Expo","Next.js · React","Firebase","Supabase"): _d[_t]=_t
